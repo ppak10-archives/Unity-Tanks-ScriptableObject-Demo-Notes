@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{11513EE5-AA74-15C1-2E6F-448B07A3278E}</ProjectGuid>
+    <ProjectGuid>{D7D942B3-FDEC-351C-9817-1464FE6F6969}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -78,16 +78,16 @@
     <Compile Include="Assets\ScriptableObject\Audio\Editor\AudioEventEditor.cs" />
     <Compile Include="Assets\ScriptableObject\Audio\Editor\RangedFloatDrawer.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/Scotty/Documents/sandbox/richardfine-scriptableobjectdemo-9a60686609a4/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Scotty/Documents/GitHub/Unity-Tanks-ScriptableObject-Demo-Notes/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Scotty/Documents/sandbox/richardfine-scriptableobjectdemo-9a60686609a4/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Scotty/Documents/GitHub/Unity-Tanks-ScriptableObject-Demo-Notes/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/Scotty/Documents/sandbox/richardfine-scriptableobjectdemo-9a60686609a4/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/Scotty/Documents/GitHub/Unity-Tanks-ScriptableObject-Demo-Notes/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Scotty/Documents/sandbox/richardfine-scriptableobjectdemo-9a60686609a4/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Scotty/Documents/GitHub/Unity-Tanks-ScriptableObject-Demo-Notes/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -380,11 +380,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{FACCC948-87E8-534A-7284-C0C9E657D21B}</Project>
+      <Project>{357F057F-836C-E836-B738-A036AE81E5FD}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{EC246BCC-F918-1D71-5C48-3EDC24D6DC59}</Project>
+      <Project>{1CCACD4A-3EA1-5190-9E7D-EFCBCADDA095}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
   </ItemGroup>

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using System; // imported in for [Serializable]
 using System.Collections.Generic;
-using System.Linq;
+using System.Linq; // imported in for FirstOrDefault() method
 using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -8,20 +8,24 @@ using UnityEngine.Assertions;
 public class GameState : ScriptableObject
 {
 
-	private static GameState _instance;
+	private static GameState _instance; // Creates a private static Gamestate instance
+
+	/// <summary>
+	/// Creates a static instance for the game state
+	/// </summary>
 	public static GameState Instance
 	{
 		get
 		{
-			if (!_instance) 
-				_instance = Resources.FindObjectsOfTypeAll<GameState>().FirstOrDefault();
+			if (!_instance) // if no private static GameState exists
+				_instance = Resources.FindObjectsOfTypeAll<GameState>().FirstOrDefault(); // find the first object that is GameState
 
 #if UNITY_EDITOR
 			if (!_instance || _instance.players.Count == 0)
 				CreateFromSettings(GameSettings.Instance);
 #endif
 
-			return _instance;
+			return _instance; // returns the found or created instance
 		}
 	}
 
@@ -35,10 +39,14 @@ public class GameState : ScriptableObject
 		public bool IsAlive {  get { return Tank && Tank.gameObject.activeSelf; } }
 	}
 
-	public List<PlayerState> players;
+	public List<PlayerState> players; // declares a list of player states
 
 	public int RoundNumber;
 
+    /// <summary>
+    /// Method to create an instance from settings
+    /// </summary>
+    /// <param name="settings"></param>
 	public static void CreateFromSettings(GameSettings settings)
 	{
 		Assert.IsNotNull(settings);

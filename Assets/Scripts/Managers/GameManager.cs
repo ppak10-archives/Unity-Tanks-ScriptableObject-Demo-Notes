@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public CameraControl m_CameraControl;       // Reference to the CameraControl script for control during different phases.
     public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
     public TankThinker m_TankPrefab;             // Reference to the prefab the players will control.
-	public Transform[] SpawnPoints;
+    public Transform[] SpawnPoints; // Declares spawn points for tanks to appear at
         
     private WaitForSeconds m_StartWait;         // Used to have a delay whilst the round starts.
     private WaitForSeconds m_EndWait;           // Used to have a delay whilst the round or game ends.
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         m_StartWait = new WaitForSeconds (m_StartDelay);
         m_EndWait = new WaitForSeconds (m_EndDelay);
 
-        SpawnAllTanks();
+        SpawnAllTanks(); // Spawn tanks and corresponding scripts
         SetCameraTargets();
 
         // Once the tanks have been created and the camera is using them as targets, start the game.
@@ -32,23 +32,26 @@ public class GameManager : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Method to spawn tanks and relative scripts for tanks
+    /// </summary>
     private void SpawnAllTanks()
     {
-	    var points = new List<Transform>(SpawnPoints);
+	    var points = new List<Transform>(SpawnPoints); // creates a new instance of the transform list to hold spawn points
 
-		m_Tanks = new List<TankThinker>();
+		m_Tanks = new List<TankThinker>(); // list of tanks 
             
         foreach (GameState.PlayerState state in GameState.Instance.players)
         {
-	        var spawnPointIndex = Random.Range(0, points.Count);
+	        var spawnPointIndex = Random.Range(0, points.Count); // chooses a random spawn point for each player (tank)
 
-	        // ... create them, set their player number and references needed for control.
-	        var tank = Instantiate(m_TankPrefab);
-	        tank.Setup(state, points[spawnPointIndex]);
+            // ... create them, set their player number and references needed for control.
+            var tank = Instantiate(m_TankPrefab); // instantiates player with player prefab
+            tank.Setup(state, points[spawnPointIndex]); // Setup player and corresponding spawn point
 
-	        points.RemoveAt(spawnPointIndex);
+            points.RemoveAt(spawnPointIndex); // removes used spawn point
 
-	        m_Tanks.Add(tank);
+            m_Tanks.Add(tank);
         }
     }
 

@@ -41,13 +41,13 @@ public class TankThinker : MonoBehaviour
 	
 	void Update ()
 	{
-		brain.Think(this);
+		brain.Think(this); // lol
 	}
 
 	public void Setup(GameState.PlayerState playerState, Transform spawnPoint)
 	{
-		transform.position = spawnPoint.position;
-		transform.rotation = spawnPoint.rotation;
+		transform.position = spawnPoint.position; // sets player position to that of spawn point
+		transform.rotation = spawnPoint.rotation; // sets player rotation to that of spawn point
 
 		brain = playerState.PlayerInfo.Brain;
 		SetColor(playerState.PlayerInfo.Color);
