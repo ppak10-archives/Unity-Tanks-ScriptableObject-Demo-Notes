@@ -65,10 +65,25 @@ public class GameSettings : ScriptableObject
 		get
 		{
 			if (!_instance)
+			{
 				_instance = Resources.FindObjectsOfTypeAll<GameSettings>().FirstOrDefault();
+				Debug.Log("no _instance before test settings", _instance);
+			}
+			else
+			{
+				Debug.Log("Settings Instance before test settings", _instance);
+			}
+			
 #if UNITY_EDITOR
 			if (!_instance)
+			{
 				InitializeFromDefault(UnityEditor.AssetDatabase.LoadAssetAtPath<GameSettings>("Assets/Test game settings.asset"));
+				Debug.Log("Load Test Settings");
+			}
+			else
+			{
+				Debug.Log("Settings Instance after test settings",_instance);
+			}
 #endif
 			return _instance;
 		}

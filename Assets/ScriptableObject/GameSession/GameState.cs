@@ -18,11 +18,19 @@ public class GameState : ScriptableObject
 		get
 		{
 			if (!_instance) // if no private static GameState exists
-				_instance = Resources.FindObjectsOfTypeAll<GameState>().FirstOrDefault(); // find the first object that is GameState
+			{
+				_instance = Resources.FindObjectsOfTypeAll<GameState>()
+					.FirstOrDefault();
+                Debug.Log("no instance");
+            } // find the first object that is GameState
+			
 
 #if UNITY_EDITOR
 			if (!_instance || _instance.players.Count == 0)
+			{
 				CreateFromSettings(GameSettings.Instance);
+			}
+				
 #endif
 
 			return _instance; // returns the found or created instance
@@ -43,10 +51,10 @@ public class GameState : ScriptableObject
 
 	public int RoundNumber;
 
-    /// <summary>
-    /// Method to create an instance from settings
-    /// </summary>
-    /// <param name="settings"></param>
+	/// <summary>
+	/// Method to create an instance from settings
+	/// </summary>
+	/// <param name="settings"></param>
 	public static void CreateFromSettings(GameSettings settings)
 	{
 		Assert.IsNotNull(settings);
