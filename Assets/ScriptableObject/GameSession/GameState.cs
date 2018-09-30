@@ -21,8 +21,8 @@ public class GameState : ScriptableObject
 			{
 				_instance = Resources.FindObjectsOfTypeAll<GameState>()
 					.FirstOrDefault();
-                Debug.Log("no instance");
-            } // find the first object that is GameState
+				Debug.Log("no instance");
+			} // find the first object that is GameState
 			
 
 #if UNITY_EDITOR
@@ -49,10 +49,10 @@ public class GameState : ScriptableObject
 
 	public List<PlayerState> players; // declares a list of player states
 
-	public int RoundNumber;
+	public int RoundNumber; // integer which indicates round number
 
 	/// <summary>
-	/// Method to create an instance from settings
+	/// Method to create an instance from settings from MainMenuController
 	/// </summary>
 	/// <param name="settings"></param>
 	public static void CreateFromSettings(GameSettings settings)

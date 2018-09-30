@@ -40,11 +40,11 @@ public class GameManager : MonoBehaviour
 		var points = new List<Transform>(SpawnPoints); // creates a new instance of the transform list to hold spawn points
 
 		m_Tanks = new List<TankThinker>(); // list of tanks 
-        Debug.Log(GameState.Instance.players);
+		Debug.Log(GameState.Instance.players);
 
 		foreach (GameState.PlayerState state in GameState.Instance.players)
 		{
-            Debug.Log("Spawn Player");
+			Debug.Log("Spawn Player");
 			var spawnPointIndex = Random.Range(0, points.Count); // chooses a random spawn point for each player (tank)
 
 			// ... create them, set their player number and references needed for control.
